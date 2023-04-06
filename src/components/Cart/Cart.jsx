@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ cart }) => {
     // const cart = props.cart; // option 1
@@ -25,13 +26,16 @@ const Cart = ({ cart }) => {
     const grandTotal = totalPrice + totalShipping + tax;
 
     return (
-        <div className='cart'>
-            <h4>Order Summary</h4>
-            <p>Selected Items: {quantity}</p>
-            <p>Total Price: ${totalPrice}</p>
-            <p>Shipping: ${totalShipping}</p>
-            <p>Tax: ${tax.toFixed(2)}</p>
-            <h6>Grand Total: ${grandTotal.toFixed(2)} </h6>
+        <div className='sticky top-0 bg-orange-400 p-4'>
+            <h4 className='text-center mb-6 font-bold text-2xl'>Order Summary</h4>
+            <p className='mb-4 font-semibold'>Selected Items: {quantity}</p>
+            <p className='mb-4 font-semibold'>Total Price: ${totalPrice}</p>
+            <p className='mb-4 font-semibold'>Shipping: ${totalShipping}</p>
+            <p className='mb-4 font-semibold'>Tax: ${tax.toFixed(2)}</p>
+            <h6 className='mb-4 font-bold'>Grand Total: ${grandTotal.toFixed(2)} </h6>
+            <button className='bg-red-700 w-full rounded py-2 text-white font-semibold'>
+                <Link>Clear Cart</Link>
+            </button>
         </div>
     );
 };

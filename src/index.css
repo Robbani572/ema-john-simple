@@ -5,3 +5,7 @@
 body{
   margin: 0;
 }
+
+.my-button{
+  @apply bg-orange-400 hover:bg-orange-600 w-full absolute rounded bottom-0 py-2 text-white font-semibold
+}

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
-import './Shop.css';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -56,8 +55,8 @@ const Shop = () => {
     }
 
     return (
-        <div className='shop-container'>
-            <div className="products-container">
+        <div className='flex flex-row '>
+            <div className="products-container m-12 grid md:grid-cols-3 gap-6 md:basis-9/12">
                 {
                     products.map(product => <Product
                         key={product.id}
@@ -66,7 +65,7 @@ const Shop = () => {
                     ></Product>)
                 }
             </div>
-            <div className="cart-container">
+            <div className="cart-container md:basis-1/5">
                 <Cart cart={cart}></Cart>
             </div>
         </div>
