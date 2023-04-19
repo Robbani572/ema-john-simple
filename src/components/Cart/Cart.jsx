@@ -1,8 +1,8 @@
 import React from 'react';
-import './Cart.css';
 import { Link } from 'react-router-dom';
+import { TrashIcon } from '@heroicons/react/24/solid'
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleClearCart, children }) => {
     // const cart = props.cart; // option 1
     // const {cart} = props; // option 2
 
@@ -33,8 +33,12 @@ const Cart = ({ cart }) => {
             <p className='mb-4 font-semibold'>Shipping: ${totalShipping}</p>
             <p className='mb-4 font-semibold'>Tax: ${tax.toFixed(2)}</p>
             <h6 className='mb-4 font-bold'>Grand Total: ${grandTotal.toFixed(2)} </h6>
-            <button className='bg-red-700 w-full rounded py-2 text-white font-semibold'>
+            <button onClick={handleClearCart} className='bg-red-700 w-full rounded py-2 text-white font-semibold flex items-center justify-center'>
                 <Link>Clear Cart</Link>
+                <TrashIcon className="h-6 w-6 text-white ml-4" />
+            </button>
+            <button className='bg-orange-600 w-full rounded py-2 text-white font-semibold mt-4'>
+                {children}
             </button>
         </div>
     );

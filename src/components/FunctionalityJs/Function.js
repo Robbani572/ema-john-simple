@@ -16,7 +16,7 @@ const cartProductsLoader = async () => {
         }
     }
 
-    console.log(sevedCart)
+    
     return sevedCart;
 }
 
